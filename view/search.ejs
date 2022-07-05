@@ -1,0 +1,72 @@
+<!-- header -->
+<%- include("./navbar") %>
+  <!-- end header -->
+
+
+  <div id="intro" class="p-5 text-center bg-light">
+
+  </div>
+
+
+  <div class="">
+    <main class="my-5">
+      <div class="container">
+        <!--Section: Content-->
+        <section class="text-center">
+          <h4 class="mb-5 btn-info "><strong>
+              <%= searchData %>
+            </strong></h4>
+
+          <div class="row">
+            <% if(quotes.length>0){%>
+            <% for(var i=0; i < quotes.length; i++) {%>
+              
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="/img/<%=quotes[i].image%>" class="img-fluid" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= quotes[i].title %>
+                    </h5>
+                    <p class="card-text">
+
+                      <span class="author btn-info text-dark  "> category : <%= quotes[i].category%></span>
+                      <span class="date btn-info text-dark "> Author Name : <%= quotes[i].author %></span><br>
+
+                      <%= quotes[i].description%>
+                    </p>
+                    <a href="/details/<%= quotes[i]._id %>" class="btn btn-success"> <i class="fas fa-eye"></i>
+                      &nbsp;Show Details </a>
+
+                  </div>
+                </div>
+              </div>
+              
+
+              <% } %>
+              <%} else { %>
+                <p>Data  Not Found </p>
+                <% } %>
+          </div>
+
+
+        </section>
+        <!--Section: Content-->
+
+
+      </div>
+    </main>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+
+
+    <%- include("./footer") %>

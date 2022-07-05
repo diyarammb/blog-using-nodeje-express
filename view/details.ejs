@@ -1,0 +1,64 @@
+<!-- Navbar -->
+<%- include("./navbar") %>
+
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Read the Details</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- single article section -->
+	<div class="mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="single-article-section">
+						<div class="single-article-text">
+							<div class="single-artcile-bg">
+								<img src="/img/<%=quotes.image%>" alt="no image"    >
+							</div>
+							<p class="blog-meta">
+								<span class="author btn-success btn"> category : <%= quotes.category%></span>
+								<span class="date btn-info btn"> Author Name : <%= quotes.author %></span>
+								<span class="date btn-info btn"> Created_at : <%= quotes.createdDate %></span>
+							</p>
+							<h2>
+								<%= quotes.title %>
+							</h2>
+							<p>
+								<%= quotes.description %>
+							</p>
+							<a href="edit/<%= quotes._id %>" class="btn btn-success"> <i
+									class="fa fa-pen-to-square"></i> &nbsp;Edit Post </a>
+							<a href="delete/<%= quotes._id %>" class="btn btn-danger"> <i class="fa fa-trash"></i>
+								&nbsp;Delete Post </a>
+						</div>
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end single article section -->
+
+		<div class="row">
+			<div class="col-md-12">
+				<hr>
+			</div>
+		</div>
+		<!-- end logo carousel -->
+
+		<!--Footer-->
+		<%- include("./footer") %>
